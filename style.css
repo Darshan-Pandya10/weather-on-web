@@ -10,7 +10,7 @@ body{
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-image: url(./Resources/Images/Main\ Background\ Image.jpg);
+    background-image: url(./Resources/Images/pexels-stefan-straka-904371.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -53,12 +53,16 @@ input{
     border-radius: 15px;
     outline: none;
     border: none;
-    margin-right: 1rem;
+    margin-right: 2rem;
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
     font-size: 20px;
     padding: 0.5rem;
     letter-spacing: 0.1rem;
+}
+
+input:hover{
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 button{
@@ -67,6 +71,11 @@ button{
     width: 2.5rem;
     height: 2.5rem;
     background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .picDescription{
@@ -96,3 +105,4 @@ footer a {
     background-repeat: no-repeat;
     background-size: cover;
 }
+

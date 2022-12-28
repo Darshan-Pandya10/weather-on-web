@@ -1,3 +1,4 @@
+const body = document.body;
 const city = document.querySelector('.city');
 const searchButton = document.querySelector('.search');
 const title = document.querySelector('.title');
@@ -42,7 +43,61 @@ async function apifunction(){
     // city.value = '';
     title.classList.add('title-margin');
     }
+
+    console.log(response.weather[0].description)
     
+
+   
+
+    // else if(response.weather[0].description === 'rain' || response.weather[0].description === 'shower rain'){
+    //     body.classList.add('rainbg')
+    // }
+
+    // else if(response.weather[0].description === 'snow'){
+    //     body.classList.add('snowbg')
+    // }
+
+    // else if(response.weather[0].description === 'mist' || response.weather[0].description === 'haze'){
+    //     body.classList.add('mistbg')
+    // }
+    
+
+    if(response.weather[0].description === 'clear sky')
+        {
+            body.style.backgroundImage =  'url(https://images.pexels.com/photos/816169/pexels-photo-816169.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)'
+        }
+
+
+    else if(response.weather[0].description === 'snow' || response.weather[0].description === 'light snow' )
+        {
+            body.style.backgroundImage =  'url(https://images.pexels.com/photos/940365/pexels-photo-940365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)'
+        }
+
+     else if(response.weather[0].description === 'rain' || response.weather[0].description === 'light rain' || response.weather[0].description === 'shower rain' )
+        {
+            body.style.backgroundImage =  'url(https://images.pexels.com/photos/12602140/pexels-photo-12602140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)'
+        }
+
+        else if(response.weather[0].description === 'mist' || response.weather[0].description === 'haze' || response.weather[0].description === 'smoke' )
+        {
+            body.style.backgroundImage =  'url(https://images.pexels.com/photos/4275884/pexels-photo-4275884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)'
+        }
+
+    else if(response.weather[0].description === 'thunderstorm'){
+        body.style.backgroundImage =  'url(https://images.pexels.com/photos/12372781/pexels-photo-12372781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)'
+    }
+
+    else if(response.weather[0].description === 'few clouds' || response.weather[0].description === 'broken clouds' )
+        {
+
+            body.style.backgroundImage =  'url(https://images.pexels.com/photos/164175/pexels-photo-164175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)'
+        }
+
+        if(response.weather[0].description === 'scattered clouds')
+        {
+            body.style.backgroundImage =  'url(https://images.pexels.com/photos/12265989/pexels-photo-12265989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)'
+        }
+
 
 }
 
