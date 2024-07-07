@@ -14,9 +14,11 @@ async function apifunction(){
 
     const api = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apikey}&units=metric&units=imperial`)
 
+    console.log(api)
+
     const response = await api.json()
 
-    // console.log(response)
+    console.log(response)
 
     const getCityWeather = city.value.toUpperCase();
 
@@ -45,22 +47,8 @@ async function apifunction(){
     }
 
     console.log(response.weather[0].description)
-    
-
-   
-
-    // else if(response.weather[0].description === 'rain' || response.weather[0].description === 'shower rain'){
-    //     body.classList.add('rainbg')
-    // }
-
-    // else if(response.weather[0].description === 'snow'){
-    //     body.classList.add('snowbg')
-    // }
-
-    // else if(response.weather[0].description === 'mist' || response.weather[0].description === 'haze'){
-    //     body.classList.add('mistbg')
-    // }
-    
+  
+    // conditions to for different weather discription.
 
     if(response.weather[0].description === 'clear sky')
         {
@@ -76,6 +64,10 @@ async function apifunction(){
      else if(response.weather[0].description === 'rain' || response.weather[0].description === 'light rain' || response.weather[0].description === 'shower rain' )
         {
             body.style.backgroundImage =  'url(https://images.pexels.com/photos/12602140/pexels-photo-12602140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)'
+        }
+    else if(response.weather[0].description === 'overcast clouds' )
+        {
+            body.style.backgroundImage =  'url(https://images.pexels.com/photos/1095817/pexels-photo-1095817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)'
         }
 
         else if(response.weather[0].description === 'mist' || response.weather[0].description === 'haze' || response.weather[0].description === 'smoke' )
